@@ -17,6 +17,8 @@ namespace ConsoleSQLDemo
         {
             db = new AppDbContext();
         }
+
+
         //Add Product till databasen 
         public void AddProduct(Product product)
         {
@@ -25,11 +27,19 @@ namespace ConsoleSQLDemo
             Console.WriteLine("Added product successfully");
         }
 
-        //Läsa produkter från databas
+        
 
+        //Läsa produkter från databas
         public List<Product> GetProducts()
         {
             return db.Products.ToList();
+        }
+
+
+        //Hämta EN product
+        public Product GetProduct(int id)
+        {
+            return db.Products.Find(id);
         }
 
     }
